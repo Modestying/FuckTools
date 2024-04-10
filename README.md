@@ -1,2 +1,5 @@
 # FuckTools
-稀奇古怪的小工具
+
+Some Interesting tools....
+
+* `Volume:` random your  `System Volume` every seconds between max and min
