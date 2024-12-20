@@ -26,11 +26,11 @@ func main() {
 	signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
 
 	fmt.Println("MAX:", maxVolume, " min:", minVolume)
-	ticker := time.NewTicker(time.Second)
+	ticker := time.NewTicker(time.Second * 5)
 	for {
 		select {
 		case <-ticker.C:
-			VolumeSetter(rander.Intn(maxVolume-minVolume) + minVolume)
+			SetSysVolume(rander.Intn(maxVolume-minVolume) + minVolume)
 		case <-sigs:
 			ticker.Stop()
 			fmt.Println("programe exit")
